@@ -12,8 +12,14 @@ public class Main {
             list.add(i - 1);
         }
 
-        list.stream().distinct().filter(n -> n % 2 == 0).reduce(Integer::sum).ifPresent(System.out::println);
+        list.stream()
+                .distinct()
+                .filter(n -> n % 2 == 0)
+                .reduce(Integer::sum)
+                .ifPresent(System.out::println);
 
+
+        //Hard Task
 
     }
 }
