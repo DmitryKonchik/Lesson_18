@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Optional;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,8 +12,8 @@ public class Main {
             list.add(i - 1);
         }
 
-        Optional<Integer> res = list.stream().distinct().filter(n -> n % 2 == 0).reduce(Integer::sum);
+        list.stream().distinct().filter(n -> n % 2 == 0).reduce(Integer::sum).ifPresent(System.out::println);
 
-        res.ifPresent(System.out::println);
+
     }
 }
