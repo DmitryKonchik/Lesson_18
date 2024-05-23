@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -36,11 +33,14 @@ public class Main {
         users.put(13, "Dilan");
         users.put(11, "Stepan");
 
+        List<Integer> correctID = Arrays.asList(1, 2, 5, 8, 9, 13);
+
         List<StringBuilder> list2 = users.keySet().stream()
-                .filter(u -> u == 1 || u == 2 || u == 5 || u == 8 || u == 9 || u == 13)
+                .filter(correctID::contains)
                 .filter(u -> users.get(u).length() % 2 != 0)
                 .map(u -> new StringBuilder(users.get(u)).reverse())
                 .collect(Collectors.toList());
+
         System.out.println(list2);
     }
 }
